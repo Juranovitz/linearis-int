@@ -3,16 +3,19 @@ type SearchParams = {
   b?: string;
   c?: string;
 };
+
 function lerp(a: number, b: number, t: number): number {
     return a + (b - a) * t;
-}
+};
+
 export default async function PageWithSearchParams({searchParams}: {searchParams: Promise<SearchParams>;}) {
   const sps = await searchParams;
-  const a: number = Number(sps.a) || 3;
-  const b: number = Number(sps.b) || 4;
+  const a: number = Number(sps.a) || 1;
+  const b: number = Number(sps.b) || 2;
   const c: number = Number(sps.c) || 0.5;
   
   const eredmeny = lerp(a, b, c);
+  
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gray-200">
       <div className="flex w-100 flex-col rounded-lg bg-white p-3 shadow-xl">
@@ -24,7 +27,7 @@ export default async function PageWithSearchParams({searchParams}: {searchParams
               className="input input-primary"
               defaultValue={a}
               id="a"
-              name="kezdőérték"
+              name="a"
               required
               type="text"
             />
@@ -35,7 +38,7 @@ export default async function PageWithSearchParams({searchParams}: {searchParams
               className="input input-primary"
               defaultValue={b}
               id="b"
-              name="végérték"
+              name="b"
               required
               type="text"
             />
@@ -46,7 +49,7 @@ export default async function PageWithSearchParams({searchParams}: {searchParams
               className="input input-primary"
               defaultValue={c}
               id="c"
-              name="x"
+              name="c"
               required
               type="text"
             />
