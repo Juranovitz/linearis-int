@@ -2,6 +2,7 @@ type SearchParams = {
   a?: string;
   b?: string;
   c?: string;
+  d?: string;
 };
 
 function lerp(a: number, b: number, t: number): number {
@@ -10,15 +11,17 @@ function lerp(a: number, b: number, t: number): number {
 
 export default async function PageWithSearchParams({searchParams}: {searchParams: Promise<SearchParams>;}) {
   const sps = await searchParams;
-  const a: number = Number(sps.a) || 1;
-  const b: number = Number(sps.b) || 2;
-  const c: number = Number(sps.c) || 0.5;
+  const a: number = Number(sps.a) || 3;
+  const b: number = Number(sps.b) || 10;
+  const c: number = Number(sps.c) || 1;
+  const d: number = Number(sps.d) || 10;
   
-  const eredmeny = lerp(a, b, c);
+  const t = c / d;
+  const eredmeny = lerp(a, b, t);
   
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-200">
-      <div className="flex w-100 flex-col rounded-lg bg-white p-3 shadow-xl">
+    <div id="elem" className=" flex min-h-screen flex-col items-center justify-center bg-blue-200">
+      <div className="flex w-275 h-125 flex-col rounded-lg bg-blue-100 p-3 shadow-xl shadow-gray-500">
         <form className="flex flex-col gap-4">
           <p className="text-xl text-center font-semibold">Lineáris interpoláció</p>
           <div>
@@ -51,6 +54,19 @@ export default async function PageWithSearchParams({searchParams}: {searchParams
               id="c"
               name="c"
               required
+              
+              type="text"
+            />
+          </div>
+                    <div>
+            <label htmlFor="d">d = </label>
+            <input
+              className="input input-primary"
+              defaultValue={d}
+              id="d"
+              name="d"
+              required
+              
               type="text"
             />
           </div>
