@@ -17,9 +17,10 @@ interface LinearInterpolationChartProps {
   a: number;
   b: number;
   t: number;
+  d: number;
 }
 
-export default function LinearInterpolationChart({ a, b, t }: LinearInterpolationChartProps) {
+export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpolationChartProps) {
   const interpolated = a + (b - a) * t;
 
   const data = {
@@ -33,7 +34,7 @@ export default function LinearInterpolationChart({ a, b, t }: LinearInterpolatio
         ],
         borderColor: "rgb(37, 99, 235)",
         backgroundColor: "rgba(37, 99, 235, 0.25)",
-        pointBackgroundColor: ["rgb(37, 99, 235)", "rgb(220, 38, 38)", "rgb(37, 99, 235)"],
+        pointBackgroundColor: ["rgb(37, 99, 235)", "rgb(252, 167, 70)", "rgb(37, 99, 235)"],
         pointBorderColor: "rgb(255, 255, 255)",
         pointBorderWidth: 2,
         pointRadius: [5, 8, 5],
@@ -55,7 +56,10 @@ export default function LinearInterpolationChart({ a, b, t }: LinearInterpolatio
         callbacks: {
           label: (context: any) => {
             const point = context.parsed;
-            return `t=${point.x.toFixed(2)}, y=${point.y.toFixed(2)}`;
+            if (context.dataIndex === 1) {
+              return `y = ${point.y.toFixed(2)}`;
+            }
+            return `x=${point.x.toFixed(2)}, y=${point.y.toFixed(2)}`;
           },
         },
       },
@@ -67,7 +71,7 @@ export default function LinearInterpolationChart({ a, b, t }: LinearInterpolatio
         max: 1,
         title: {
           display: true,
-          text: "t paraméter",
+          text: `d = ${d}`,
         },
       },
       y: {

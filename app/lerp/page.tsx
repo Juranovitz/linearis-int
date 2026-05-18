@@ -80,7 +80,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
           </form>
         </div>
 
-        <LinearInterpolationChart a={a} b={b} t={t} />
+        <LinearInterpolationChart a={a} b={b} t={t} d={d} />
       </div>
     </div>
   );
