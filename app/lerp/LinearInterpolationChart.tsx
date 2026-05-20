@@ -22,6 +22,7 @@ interface LinearInterpolationChartProps {
 
 export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpolationChartProps) {
   const interpolated = a + (b - a) * t;
+  const xInterpolated = t * d;
 
   const data = {
     datasets: [
@@ -29,8 +30,8 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
         label: "Lineáris interpoláció",
         data: [
           { x: 0, y: a },
-          { x: t, y: interpolated },
-          { x: 1, y: b },
+          { x: xInterpolated, y: interpolated },
+          { x: d, y: b },
         ],
         borderColor: "rgb(37, 99, 235)",
         backgroundColor: "rgba(37, 99, 235, 0.25)",
@@ -68,10 +69,14 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
       x: {
         type: "linear" as const,
         min: 0,
-        max: 1,
+        max: d,
+        ticks: {
+          stepSize: d >= 1 ? 1 : undefined,
+          callback: (value: number | string) => value.toString(),
+        },
         title: {
           display: true,
-          text: `d = ${d}`,
+          text: `x koordináta`,
         },
       },
       y: {
