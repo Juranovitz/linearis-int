@@ -13,13 +13,18 @@ function lerp(a: number, b: number, t: number): number {
 
 export default async function PageWithSearchParams({ searchParams }: { searchParams: Promise<SearchParams>; }) {
   const sps = await searchParams;
-  const a: number = Number(sps.a) || 3;
-  const b: number = Number(sps.b) || 10;
-  const c: number = Number(sps.c) || 1;
-  const d: number = Number(sps.d) || 10;
+  const a: number = sps.a !== undefined ? Number(sps.a) : 3;
+  let b: number = sps.b !== undefined ? Number(sps.b) : 10;
+  const c: number = sps.c !== undefined ? Number(sps.c) : 0.3;
+  let d: number = sps.d !== undefined ? Number(sps.d) : 1;
 
   const t = d === 0 ? 0 : c / d;
   const y = lerp(a, b, t);
+  
+if (c > d) {
+  d = c+1;
+}
+
 
   return (
     <div id="elem" className="flex min-h-screen flex-col items-center justify-center bg-blue-200 p-4">
@@ -28,7 +33,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
           <form className="flex flex-col gap-4">
             <p className="text-2xl text-center font-semibold">Lineáris interpoláció</p>
             <div>
-              <label htmlFor="a" className="text-2xl font-semibold ml-15">I. Y pont értéke = </label>
+              <label htmlFor="a">1.pont y értéke =  </label>
               <input
                 className="input input-primary text-2xl"
                 defaultValue={a}
@@ -39,7 +44,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
               />
             </div>
             <div>
-              <label htmlFor="b" className="text-2xl font-semibold ml-15">II. Y pont értéke = </label>
+              <label htmlFor="b">2.pont y értéke =  </label>
               <input
                 className="input input-primary text-2xl"
                 defaultValue={b}
@@ -50,7 +55,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
               />
             </div>
             <div>
-              <label htmlFor="c" className="text-2xl font-semibold ml-15">Keresett Y érték = </label>
+              <label htmlFor="c">keresett y érték = </label>
               <input
                 className="input input-primary text-2xl"
                 defaultValue={c}
@@ -61,7 +66,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
               />
             </div>
             <div>
-              <label htmlFor="d" className="text-2xl font-semibold ml-15">Ábrázolás X távja = </label>
+              <label htmlFor="d">ábrázolás x táv = </label>
               <input
                 className="input input-primary text-2xl"
                 defaultValue={d}
