@@ -10,7 +10,7 @@ type LinkType = {
 
 
 const links: LinkType[] = [
-  { href: "/alapok", label: "Alapok" },
+  { href: "/keszitok", label: "Készítők" },
   { href: "/lerp", label: "Lineáris interpoláció" }
 ];
 
