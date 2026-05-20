@@ -35,7 +35,7 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
         ],
         borderColor: "rgb(37, 99, 235)",
         backgroundColor: "rgba(37, 99, 235, 0.25)",
-        pointBackgroundColor: ["rgb(37, 99, 235)", "rgb(252, 167, 70)", "rgb(37, 99, 235)"],
+        pointBackgroundColor: ["rgb(8, 148, 255)", "rgb(8, 148, 255)", "rgb(8, 148, 255)"],
         pointBorderColor: "rgb(255, 255, 255)",
         pointBorderWidth: 2,
         pointRadius: [5, 8, 5],
@@ -91,7 +91,7 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
 
   return (
     <div className="mt-6 w-full max-w-3xl rounded-xl bg-white p-4 shadow-md shadow-slate-300">
-      <div className="mb-3 text-center text-lg font-semibold text-slate-700">
+      <div className="mb-3 text-center text-lg font-semibold">
         Lineáris interpoláció grafikon
       </div>
       <div className="h-72">
