@@ -1,34 +1,16 @@
 export default function TSalapokPage() {
-  // Megjegyzés
-  // JS/TS Egyszerű változótípusai
-  // - szöveges típus (string)
-  // - numerikus típus (number)
-  // - logikai típus (boolean)
-
-  // egyszerű változók definiálása
-  // [const, let, var] változó_azonosítója: változó_típusa = kezdőérték
-  // const - Ha a változó értéke a program futása alatt nem változik
-  // let - Ha a változó értéke a program futása alatt változik
-  // var - Elvileg a var is használható, de a linterek elavúlt scope-ja végett tíltják
-
-  const szöveg: string = "Alma"; // "Alma" string literál
-  const szöveg2: string = 'Körte "pálinka" ital';
-  let a: number = 3;
-  const b: number = 4 * a;
-  a = 5;
-  const valós: number = 3.14;
-  const szöveg3: string = `${a} * ${b} = ${a * b}`; // template string literál
-  const logikai1: boolean = true; // vagy false
-  const logikai2: boolean = a > b;
 
   return (
-    <div>
-      <p>{szöveg}</p>
-      <p>{szöveg2}</p>
-      <p>{szöveg3}</p>
-      <p>Pi: {valós}</p>
-      <p>{logikai1 ? "true" : "false"}</p>
-      <p>{logikai2 ? "true" : "false"}</p>
+    <div id="elem" className="flex min-h-screen flex-col items-center justify-center bg-blue-200 p-4">
+      <div className="flex w-full max-w-3xl flex-col gap-10 rounded-xl bg-blue-100 p-3 shadow-xl shadow-gray-500">
+        <div className="rounded-xl bg-white p-5 shadow-inner shadow-slate-200">
+          <form className="flex flex-col gap-4">
+            <p className="text-2xl text-center font-semibold">Készítők</p>
+            <br />
+            
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
