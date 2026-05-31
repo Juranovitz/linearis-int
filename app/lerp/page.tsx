@@ -30,8 +30,8 @@ if (c > d) {
 
 
   return (
-    <div id="elem" className="flex min-h-screen flex-col items-center justify-center bg-blue-200 p-4">
-      <div className="flex w-full max-w-3xl flex-col gap-10 rounded-xl bg-blue-100 p-3 shadow-xl shadow-gray-500">
+    <div id="elem" className="flex min-h-screen flex-col items-center justify-center bg-blue-100 p-4">
+      <div className="flex w-full max-w-3xl flex-col gap-3 rounded-xl bg-blue-100 p-3 shadow-xl shadow-gray-500">
         <div className="rounded-xl bg-white p-5 shadow-inner shadow-slate-200">
           <form className="flex flex-col gap-4">
             <p className="text-2xl text-center font-semibold">Lineáris interpoláció</p>
@@ -41,7 +41,7 @@ if (c > d) {
                 <span className="w-6 text-right">=</span>
               </label>
               <input
-                className="input input-primary text-2xl"
+                className="input input-primary text-2xl peer-focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50"
                 defaultValue={a}
                 id="a"
                 name="a"
@@ -55,7 +55,7 @@ if (c > d) {
                 <span className="w-6 text-right">=</span>
               </label>
               <input
-                className="input input-primary text-2xl"
+                className="input input-primary text-2xl peer-focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50"
                 defaultValue={b}
                 id="b"
                 name="b"
@@ -69,7 +69,7 @@ if (c > d) {
                 <span className="w-6 text-right">=</span>
               </label>
               <input
-                className="input input-primary text-2xl"
+                className="input input-primary text-2xl peer-focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50"
                 defaultValue={c}
                 id="c"
                 name="c"
@@ -83,7 +83,7 @@ if (c > d) {
                 <span className="w-6 text-right">=</span>
               </label>
               <input
-                className="input input-primary text-2xl"
+                className="input input-primary text-2xl peer-focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200 focus:ring-opacity-50"
                 defaultValue={d}
                 id="d"
                 name="d"
@@ -92,7 +92,11 @@ if (c > d) {
               />
             </div>
             <div className="flex justify-center">
-              <input className="btn btn-primary w-30 h-15 bg-indigo-100 text-xl rounded-3xl border-3 border-indigo-300 hover:cursor-pointer" type="submit" value="Számol" />
+              <button
+                className="w-30 h-15 bg-indigo-200 p-3 shadow-md shadow-gray-500 text-xl rounded-xl border-3 border-indigo-300 hover:cursor-pointer text-black 
+            hover:bg-indigo-400 hover:text-white hover:shadow-lg hover:shadow-gray-400 transition-colors duration-300"
+                type="submit"
+              >Számol</button>
             </div>
             <div className="flex justify-around text-lg font-medium">
               <p className="text-2xl font-semibold">Y = {y}</p>
