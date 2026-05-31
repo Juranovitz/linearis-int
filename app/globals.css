@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #93d7ff;
+  --background: #BEDBFF;
   --foreground: #000000;
 }
 
@@ -26,9 +26,12 @@ body {
 }
 
 button {
-  color: #ad9d07;
   border: 2px solid #2482cf;
   padding: 0.5rem 1rem;
   cursor: pointer;
+}
+
+#white {
+  color: #fffffe;
 }
 
