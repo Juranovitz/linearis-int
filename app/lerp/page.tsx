@@ -23,7 +23,10 @@ if (c > d) {
 }
 
   const t = d === 0 ? 0 : c / d;
-  const y = lerp(a, b, t);
+  let y = lerp(a, b, t);
+  if (y !== y) {
+    y = "Kérlek számot adj meg";
+  }
   
 
 
