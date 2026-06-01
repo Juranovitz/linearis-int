@@ -19,6 +19,8 @@ github: Juranovitz
 - Node.js
 - daisyUi
 - Chart.js
+## Hostolva:
+## https://linearis-int.vercel.app/
   
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
