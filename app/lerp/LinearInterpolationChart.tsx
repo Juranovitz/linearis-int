@@ -84,7 +84,7 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
           display: true,
           text: "Érték",
         },
-        beginAtZero: false,
+        beginAtZero: true,
       },
     },
   };

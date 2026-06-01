@@ -25,7 +25,7 @@ export default function AlapokPage() {
             <p>A lineáris intrerpoláció két érték között meghatároz egy harmadikat a keresett távolság alapján.</p>
             <br />
             <p>Az oldal pontosabb működése:</p>
-            <p>Az abrázolt tartományból és a keresett értékből az oldal kiszámítja hogy mekkora távolságra van az érték, tehát ha 1 a keresett érték egy 10 egységes négyzetrácson, a távolság 0.1 lesz, amivel beszorozza a különbséget, majd hozzáadja a kezdőponthoz, így megkapva a kívánt értéket.</p>
+            <p className="size-lg">Az abrázolt tartományból és a keresett értékből az oldal kiszámítja hogy mekkora távolságra van az érték, tehát ha 1 a keresett érték egy 10 egységes négyzetrácson, a távolság 0.1 lesz, amivel beszorozza a különbséget, majd hozzáadja a kezdőponthoz, így megkapva a kívánt értéket.</p>
             <hr className="my-4" />
         <ul className="mt-3 text-center text-xl">
           {links.map((link, index) => (
