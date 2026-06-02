@@ -18,9 +18,10 @@ interface LinearInterpolationChartProps {
   b: number;
   t: number;
   d: number;
+  advanced: boolean;
 }
 
-export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpolationChartProps) {
+export default function LinearInterpolationChart({ a, b, t, d, advanced }: LinearInterpolationChartProps) {
   const interpolated = a + (b - a) * t;
   const xInterpolated = t * d;
 
@@ -84,7 +85,7 @@ export default function LinearInterpolationChart({ a, b, t, d }: LinearInterpola
           display: true,
           text: "Érték",
         },
-        beginAtZero: true,
+        beginAtZero: advanced,
       },
     },
   };

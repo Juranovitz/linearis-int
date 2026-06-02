@@ -5,6 +5,7 @@ type SearchParams = {
   b?: string;
   c?: string;
   d?: string;
+  advanced?: string;
 };
 
 function lerp(a: number, b: number, t: number): number | string  {
@@ -17,6 +18,7 @@ export default async function PageWithSearchParams({ searchParams }: { searchPar
   let b: number | string = sps.b !== undefined ? Number(sps.b) : 10;
   let c: number | string = sps.c !== undefined ? Number(sps.c) : 1;
   let d: number | string = sps.d !== undefined ? Number(sps.d) : 10;
+  const advanced: boolean = sps.advanced !== undefined;
 
 if (c > d) {
   d = c+1;
@@ -95,12 +97,22 @@ if (c > d) {
               />
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <button
-                className="w-30 h-15 bg-indigo-200 p-3 shadow-md shadow-gray-500 text-xl rounded-xl border-3 border-indigo-300 hover:cursor-pointer text-black 
+                className="w-30 h-15 bg-indigo-200 p-3 shadow-md shadow-gray-500 text-xl rounded-xl border-3 border-indigo-300 hover:cursor-pointer 
             hover:bg-indigo-400 hover:text-white hover:shadow-lg hover:shadow-gray-400 transition-colors duration-300"
                 type="submit"
               >Számol</button>
+              <label className="flex items-center gap-2 text-lg font-medium">
+                <input
+                  type="checkbox"
+                  name="advanced"
+                  value="on"
+                  defaultChecked={advanced}
+                  className="checkbox checkbox-primary"
+                />
+                Ne az origóból ábrázolja
+              </label>
             </div>
             <div className="flex justify-around text-lg font-medium">
               <p className="text-2xl font-semibold">Y = {y}</p>
@@ -108,7 +120,7 @@ if (c > d) {
           </form>
         </div>
 
-        <LinearInterpolationChart a={a} b={b} t={t} d={d} />
+        <LinearInterpolationChart a={a} b={b} t={t} d={d} advanced={advanced} />
       </div>
     </div>
   );
