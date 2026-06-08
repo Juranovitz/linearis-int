@@ -8,8 +8,12 @@ type SearchParams = {
   advanced?: string;
 };
 
-function lerp(a: number, b: number, t: number): number | string  {
-  return a + (b - a) * t;
+function lerp(a: number | string, b: number | string, t: number | string): number | string {
+  if (typeof a === "number" && typeof b === "number" && typeof t === "number") {
+    return a + (b - a) * t;
+  } else {
+    return "Kérlek számot adj meg";
+  }
 }
 
 export default async function PageWithSearchParams({ searchParams }: { searchParams: Promise<SearchParams>; }) {
@@ -26,9 +30,6 @@ if (c > d) {
 
   const t = d === 0 ? 0 : c / d;
   let y: number | string = lerp(a, b, t);
-  if (typeof y !== "number" || Number.isNaN(y)) {
-    y = "Kérlek számot adj meg";
-  }
   
 
 
